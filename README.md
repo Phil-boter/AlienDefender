@@ -1,3 +1,4 @@
+![alien1](https://user-images.githubusercontent.com/68227335/123422276-41d65480-d5be-11eb-9dc7-4ca10a1fe043.jpg)
 # AlienDefender
 
 Small retro browser game made with React.js and Firebase.
