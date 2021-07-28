@@ -1,0 +1,18 @@
+.about-article-container {
+	border: 3px solid black;
+	border-radius: 1rem;
+	box-shadow: 4px 4px 10px black;
+	width: 60%;
+	margin: 3rem auto;
+	padding: 2rem;
+	background-color: white;
+	color: black;
+	font-family: "Monserrat", sans-serif;
+}
+.article-header {
+	color: black;
+	font-size: 1.7rem;
+	font-family: "Press Start 2P", cursive;
+	text-align: center;
+	padding: 1rem;
+}

@@ -1,0 +1,54 @@
+.highscore-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.score-header {
+	text-align: center;
+	font-family: "Press Start 2P", cursive;
+	padding: 1rem;
+}
+.score-container {
+	width: 60%;
+	height: auto;
+	color: white;
+	background-color: black;
+	margin: 0 auto;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+.score-container ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.score-container li {
+	list-style: none;
+	padding: 0.3rem;
+	display: inline-flex;
+	font-family: "Monserrat", sans-serif;
+}
+.score-name {
+	width: 20rem;
+}
+.score-score {
+	width: 5rem;
+}
+.score-form {
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+	padding: 3rem 0;
+}
+.score-form input {
+	padding: 1rem;
+	margin: 1rem;
+	font-size: 1.3rem;
+}
+.back a {
+	text-decoration: none !important;
+	color: black;
+}
