@@ -8,9 +8,17 @@
 		<meta name="description" content="small browser game" />
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-		<link rel="prefetch" href="%PUBLIC_URL%/images/milkySmall.jpg" />
-		<link rel="prefetch" href="%PUBLIC_URL%/images/meteorBig.png" />
-		<link rel="prefetch" href="%PUBLIC_URL%/images/ufoClip.png" />
+		<link
+			rel="preload"
+			href="%PUBLIC_URL%/images/milkySmall.jpg"
+			as="image"
+		/>
+		<link
+			rel="preload"
+			href="%PUBLIC_URL%/images/meteorBig.png"
+			as="image"
+		/>
+		<link rel="preload" href="%PUBLIC_URL%/images/ufoClip.png" as="image" />
 
 		<!--
       manifest.json provides metadata used when your web app is installed on a
