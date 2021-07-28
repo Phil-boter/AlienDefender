@@ -2,6 +2,8 @@ import $ from "jquery";
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./main.css";
+
 export default function Main({ setVictoryPoints, totalPoints }) {
 	const canvasRef = useRef(null);
 
@@ -122,47 +124,35 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 			setVictoryPoints(victoryPoints);
 		}
 		$(document).on("keydown", function (evt) {
-			console.log("keycode: " + evt.which);
+			//  console.log("keycode: " + evt.which);
 
 			switch (evt.which) {
 				case 40:
-					// console.log("arrow key down");
 					y += 20;
 					if (y >= 480) {
 						y = 460;
 					}
-					// console.log("value y: " + y);
-					// return false;
 					break;
 
 				case 38:
-					//console.log("arrow key up");
 					y -= 20;
 					if (y <= 0) {
 						y = 0;
 					}
-					// console.log("wert -y: " + y);
-					// return false;
 					break;
 
 				case 37:
-					// console.log("arrow key left");
 					x -= 20;
 					if (x <= 0) {
 						x = 0;
 					}
-					// console.log("value -x: " + x);
-					// return false;
 					break;
 
 				case 39:
-					// console.log("arrow key right");
 					x += 20;
 					if (x >= 600) {
 						x = 580;
 					}
-					// console.log("value x: " + x);
-					// return false;
 					break;
 				default:
 					console.log(`Sorry, we are out.`);
@@ -170,17 +160,13 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 		});
 	};
 
-	const restart = () => {
-		setGameOver(false);
-		gameCode();
-	};
+	// const restart = () => {
+	// 	setGameOver(false);
+	// 	gameCode();
+	// };
 	return (
 		<>
-			<h1 className="main-header">
-				Alien
-				<br />
-				Defender
-			</h1>
+			<h1 className="main-header">Alien Defender</h1>
 			<div id="spielbereich" className="main-container">
 				<div className="game-container">
 					<canvas
@@ -211,7 +197,7 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 						<button
 							type="button"
 							className="button"
-							onClick={() => restart()}
+							onClick={() => window.location.reload(false)}
 						>
 							New game???
 						</button>
@@ -231,9 +217,14 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 					alt="meteor"
 				/>
 			</div>
-			<Link to="/score" className="highscore-link">
-				<h3>View Highscore</h3>
-			</Link>
+			<div className="highscore-link-container">
+				<Link to="/score" className="highscore-link">
+					<h3>View Highscore</h3>
+				</Link>
+				<Link to="/about" className="highscore-link">
+					<h3>About</h3>
+				</Link>
+			</div>
 		</>
 	);
 }

@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import "./highscore.css";
+
 import firebase from "firebase";
 require("firebase/firestore");
 require("firebase/firebase-storage");
 
 export default function HighScore({ totalPoints }) {
-	console.log("totalpoints in SCore", totalPoints);
+	// console.log("totalpoints in SCore", totalPoints);
 
 	const [name, setName] = useState("");
-	console.log("name", name);
+	// console.log("name", name);
 
 	const [score, setData] = useState([]);
-	console.log("score", score);
+	// console.log("score", score);
+
+	const [error, setError] = useState(false);
+	// console.log("error", error);
 
 	const nameInput = (e, value) => {
 		e.preventDefault();
@@ -21,7 +26,7 @@ export default function HighScore({ totalPoints }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log("payload in submit", name, totalPoints);
+		// console.log("payload in submit", name, totalPoints);
 		firebase
 			.firestore()
 			.collection("score")
@@ -31,12 +36,13 @@ export default function HighScore({ totalPoints }) {
 				creation: firebase.firestore.FieldValue.serverTimestamp(),
 			})
 			.then(() => {
-				console.log("Document written with ID: ");
+				// console.log("Document written with ID: ");
 				setName("");
 				getHighScore();
 			})
 			.catch((error) => {
 				console.log("upload NOT succefull", error);
+				setError(true);
 			});
 	};
 
@@ -53,12 +59,13 @@ export default function HighScore({ totalPoints }) {
 		if (snapScore) {
 			const data = snapScore.docs.map((doc) => {
 				let score = doc.data();
-				console.log("data", score);
+				// console.log("data", score);
 				return score;
 			});
 			setData(data);
 		} else {
 			console.log("no scores");
+			setError(true);
 		}
 	};
 
@@ -87,6 +94,11 @@ export default function HighScore({ totalPoints }) {
 						))}
 				</ul>
 			</div>
+			{error && (
+				<div className="error-container">
+					<h3 className="error">Ooops! Something is wrong....</h3>
+				</div>
+			)}
 			<form className="score-form">
 				<input
 					type="text"

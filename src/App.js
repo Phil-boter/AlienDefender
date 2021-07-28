@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Main from "./components/Main";
 import HighScore from "./components/HighScore";
+import About from "./components/About";
 
 // -------------- setup firebase ---------------------
 
@@ -45,6 +46,7 @@ function App() {
 						path="/score"
 						render={() => <HighScore totalPoints={totalPoints} />}
 					/>
+					<Route path="/about" render={() => <About />} />
 				</Switch>
 			</BrowserRouter>
 		</div>
