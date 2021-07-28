@@ -219,10 +219,10 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 			</div>
 			<div className="highscore-link-container">
 				<Link to="/score" className="highscore-link">
-					<h3>View Highscore</h3>
+					<h2>View Highscore</h2>
 				</Link>
 				<Link to="/about" className="highscore-link">
-					<h3>About</h3>
+					<h2>About</h2>
 				</Link>
 			</div>
 		</>
