@@ -49,6 +49,9 @@
 	margin: 1rem;
 	font-size: 1.3rem;
 }
+.back {
+	width: 12rem;
+}
 .back a {
 	text-decoration: none !important;
 	color: black;

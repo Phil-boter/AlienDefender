@@ -32,6 +32,10 @@
 	background-color: silver;
 	border-radius: 2rem;
 	box-shadow: 4px 4px 10px black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 .game-status-container {
 	display: flex;
@@ -41,6 +45,7 @@
 	background-color: rgb(9, 9, 48);
 	color: yellow;
 	height: 5rem;
+	width: 600px;
 	font-size: 1.7rem;
 }
 .game-status h1 {
@@ -70,47 +75,48 @@
 	text-transform: uppercase;
 }
 .button {
-	position: relative;
-	display: inline-block;
-	padding: 15px 25px;
+	margin: 1rem;
+	width: 33%;
 	background-color: silver; /*for compatibility with older browsers*/
 	background-image: linear-gradient(silver, rgb(240, 240, 240));
-	border-radius: 25px;
+
 	/* text styles */
 	text-decoration: none;
 	color: black;
-	font-size: 1.6rem;
+
 	font-family: "Press Start 2P", cursive;
 	text-transform: uppercase;
 	font-weight: 100;
-	margin: 1rem;
 }
 .button:hover {
 	background: linear-gradient(rgb(211, 211, 211), rgb(122, 122, 122));
 }
-
+.start-button {
+	height: 5rem;
+	padding: 15px 25px;
+	border-radius: 25px;
+	font-size: 1.6rem;
+}
 .start {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	width: 100%;
+	width: 600px;
 	padding: 1rem;
 }
 .highscore-link-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
+	height: 3rem;
 }
 .highscore-link {
-	border: 1px aolid blue;
-	width: 100rem;
+	color: black;
 	text-align: center;
+	font-size: 0.8rem;
 	font-family: "Press Start 2P", cursive;
-	color: yellow;
-	margin: 0 auto;
-	padding: 0.5rem;
+	text-decoration: none;
 }
 .ufo {
 	position: absolute;

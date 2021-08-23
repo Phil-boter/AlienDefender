@@ -32,7 +32,10 @@ export default function About() {
 						your keyboard.
 					</article>
 				</div>
-				<button type="button" className="button back">
+				<button
+					type="button"
+					className="button back highscore-link-container"
+				>
 					<Link to="/">back</Link>
 				</button>
 			</div>

@@ -9,7 +9,7 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 
 	const [gameOver, setGameOver] = useState(false);
 
-	console.log("game status", gameOver);
+	// console.log("game status", gameOver);
 
 	const gameCode = () => {
 		//startposition spaceship
@@ -53,7 +53,7 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 			// console.log("y: " + y + "|Ziel y:" + targetY);
 			if (x === targetX && y === targetY) {
 				//target hit
-				console.log("You win!!");
+				// console.log("You win!!");
 				// create new target
 				if (targetY === 460) {
 					targetY = 0;
@@ -111,7 +111,7 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 				if (Math.abs(x - enemyPosition[nr]) < 20 && y === ygeg) {
 					//collision
 					collisionEnemy();
-					console.log("Hit!!!");
+					// console.log("Hit!!!");
 					// console.log(Math.abs(x - enemyPosition[nr]));
 					// console.log(" | y: " + y);
 					// console.log(" | y; " + ygeg + "calculated");
@@ -179,15 +179,33 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 
 					<div className="game-status-container">
 						<div id="points" className="score">
-							points:0
+							Points:0
 						</div>
 						<div id="gameTime" className="score">
 							Time: 0
 						</div>
 					</div>
 					<div className="start">
-						<button className="button" onClick={() => gameCode()}>
+						<button className="button">
+							<div className="highscore-link-container">
+								<Link to="score" className="highscore-link">
+									highscore
+								</Link>
+							</div>
+						</button>
+						<button
+							className="button start-button"
+							onClick={() => gameCode()}
+						>
 							Start
+						</button>
+
+						<button className="button">
+							<div className="highscore-link-container">
+								<Link to="/about" className="highscore-link">
+									About
+								</Link>
+							</div>
 						</button>
 					</div>
 				</div>
@@ -196,12 +214,15 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 						<h1>Game over!!!</h1>
 						<button
 							type="button"
-							className="button"
+							className="button back highscore-link-container"
 							onClick={() => window.location.reload(false)}
 						>
 							New game???
 						</button>
-						<button type="button" className="button back">
+						<button
+							type="button"
+							className="button back highscore-link-container"
+						>
 							<Link to="score">Save to Score Board</Link>
 						</button>
 					</div>
@@ -217,14 +238,14 @@ export default function Main({ setVictoryPoints, totalPoints }) {
 					alt="meteor"
 				/>
 			</div>
-			<div className="highscore-link-container">
+			{/* <div className="highscore-link-container">
 				<Link to="/score" className="highscore-link">
 					<h2>View Highscore</h2>
 				</Link>
 				<Link to="/about" className="highscore-link">
 					<h2>About</h2>
 				</Link>
-			</div>
+			</div> */}
 		</>
 	);
 }

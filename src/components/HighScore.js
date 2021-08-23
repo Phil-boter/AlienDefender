@@ -108,13 +108,16 @@ export default function HighScore({ totalPoints }) {
 				></input>
 				<button
 					disabled={!name || name.length < 1}
-					className="button"
+					className="button back highscore-link-container"
 					onClick={(e) => handleSubmit(e, name, totalPoints)}
 				>
 					Save
 				</button>
 			</form>
-			<button type="button" className="button back">
+			<button
+				type="button"
+				className="button back highscore-link-container"
+			>
 				<Link to="/">back</Link>
 			</button>
 		</div>
